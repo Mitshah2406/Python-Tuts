@@ -14,7 +14,7 @@ elif marks>=50:
     }
 elif marks>=30:
     {
-        print('Grade D')
+        print('Grade z')
     }
 else:
     {
