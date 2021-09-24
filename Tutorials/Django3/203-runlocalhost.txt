@@ -1,0 +1,33 @@
+D:\Downloads\MIT\Python\Tutorials\Django3\firstprj>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 17 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+August 17, 2021 - 11:09:52
+Django version 3.0, using settings 'firstprj.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[17/Aug/2021 11:10:04] "GET / HTTP/1.1" 200 16351
+[17/Aug/2021 11:10:04] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[17/Aug/2021 11:10:04] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[17/Aug/2021 11:10:04] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[17/Aug/2021 11:10:04] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+Not Found: /favicon.ico
+[17/Aug/2021 11:10:04] "GET /favicon.ico HTTP/1.1" 404 1974
+[17/Aug/2021 11:10:24] "GET / HTTP/1.1" 200 16351
+[17/Aug/2021 11:10:24] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[17/Aug/2021 11:10:24] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[17/Aug/2021 11:10:24] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[17/Aug/2021 11:10:24] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+Not Found: /favicon.ico
+[17/Aug/2021 11:10:24] "GET /favicon.ico HTTP/1.1" 404 1974
+
+D:\Downloads\MIT\Python\Tutorials\Django3\firstprj>
+
+
+
+#NOTE== TO CLOSE SERVER PRESS CTRL+C
+#NOTE==TO RUN SERVER ON LOCALHOST SIMPLY REPLACE "127.0.0.1:8000" WITH "localhost:8000"

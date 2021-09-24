@@ -1,0 +1,45 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.con{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.bk_name{
+    font-weight: bolder;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 12px 12px;
+    margin: 12px 12px;
+    border: 1px solid rgb(126, 54, 126, 65%);
+    box-shadow: 5px 5px rgb(126, 54, 126, 65%);
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.infor{
+    padding: 12px 0px;
+}
+.book_name{
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+.book_desc,.book_price{
+    font-size: 1.3rem;
+    font-weight: 400;
+}

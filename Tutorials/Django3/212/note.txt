@@ -1,0 +1,6 @@
+you need to register your model in admin.py file as follows:
+
+from django.contrib import admin
+from .models import book
+# Register your models here.
+admin.site.register(book)

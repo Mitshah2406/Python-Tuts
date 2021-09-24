@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>TextUtils</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 2.1rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            background-color: rgb(210, 186, 186);
+            padding: 20px;
+            box-sizing: content-box;
+        }
+
+        .wlcmtxt {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: capitalize;
+            text-decoration: underline;
+            margin: 25px 12px;
+        }
+
+        .txt {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin: 20px 80px;
+        }
+
+        .input {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 15px 0px;
+
+        }
+
+        #txtarea {
+            width: 500px;
+            height: 30vh;
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+
+        .sub_btn {
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: none;
+            font-size: 1.0rem;
+            font-weight: 400;
+            border: 2px solid black;
+        }
+
+        .chkbox {
+            margin: 12px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        #check {
+            border-radius: 5px;
+            height: 18px;
+            width: 17px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">Text Analyzer</h1>
+    <p class="wlcmtxt">Welcome to Text Analyzer</p>
+    <form action="/analyze" , method="GET">
+        <div class="txt">
+            <p class="input">
+                Enter You Text:
+            </p>
+            <textarea name="text" id="txtarea" cols="30" rows="10"></textarea>
+            <div class="chkbox">
+                <div><input type="checkbox" name="check" id="check"> <span class="rtxt">Remove Punctuations</span></div>
+                <div><input type="checkbox" name="uppercase" id="check"> <span class="rtxt">UPPERCASE</span></div>
+                <div><input type="checkbox" name="newlineremover" id="check"> <span class="rtxt">Remove New Lines</span></div> 
+                <div><input type="checkbox" name="extraspaceremover" id="check"> <span class="rtxt">Remove Extra Spaces</span></div> 
+               
+
+                <!-- <select name="option" id="option">
+                    <option value="remove_punctuations">Remove Punctuations</option>
+                    <option value="uppercase">UPPERCASE</option>
+                    <option value="remove_extraspace">Remove Extra Spaces</option>
+                    <option value="newlineremover">New Line Remover</option>
+                </select> -->
+            </div>
+            <button class="sub_btn">
+                Submit
+            </button>
+        </div>
+    </form>
+</body>
+
+</html>

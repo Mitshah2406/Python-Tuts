@@ -1,0 +1,329 @@
+# ---------------------------LECTURE 161------------------------------
+
+#Data Frame is a Tabulous Structure from panda library having multiple number of rows and columns.
+from pandas import DataFrame
+data = {"Name":['Mit','Adi','Sanskar'],"Age":[18,15,17],"Salary":[2500000,2500000,2500000]}
+df = DataFrame(data)
+print(df)
+
+
+
+# ---------------------------LECTURE 162------------------------------
+# -------------------------------------LECTURE 162-CHANGING COLUMN SEQUENCE-------------------------------
+#Data Frame is a Tabulous Structure from panda library having multiple number of rows and columns.
+from pandas import DataFrame
+data = {"Age":[18,15,17],"Name":['Mit','Adi','Sanskar'],"Salary":[2500000,2500000,2500000]}
+df = DataFrame(data)
+df
+
+
+new_frame = DataFrame(data, columns = ['Name','Age','Salary']) #here in columns we need to specify in which order we want.
+new_frame
+
+
+
+#Now, suppose if you specify one more parameter which is not present in your dataframe then also it will be shown with its 
+#values as NaN.
+new_frame = DataFrame(data, columns = ['Name','Age','Salary','Qualification']) 
+new_frame
+
+
+#import a column from dataframe to series
+new_frame['Salary'] #just type the dataframe's name and in square braces pass its attribute name of which column you want
+
+
+
+#import a row from dataframe to series
+new_frame.loc[2]#just type the dataframe's name and use (loc) method and in square braces pass the index no of the row you want
+
+
+
+
+# -------------------------------------LECTURE 163 CHANGING COLUMNS AND TRANSPOSING DATAFRAME-------------------------------
+from pandas import DataFrame
+data = {"Age":[18,15,17],"Name":['Mit','Adi','Sanskar'],"Salary":[2500000,2500000,2500000]}
+df = DataFrame(data)
+df
+​
+
+#Now, suppose if you specify one more parameter which is not present in your dataframe then also it will be shown with its 
+#values as NaN.
+new_frame = DataFrame(data, columns = ['Name','Age','Salary','Qualification']) 
+new_frame
+
+
+new_frame['Qualification']= 'M.tech in CS'
+new_frame
+
+
+new_frame['Qualification']='M.tech in CS','m.tech','m.tech'
+new_frame
+
+
+#Transposing i.e. exchange of row and columns
+new_frame = new_frame.T
+new_frame
+
+
+new_frame = new_frame.T
+new_frame
+
+
+
+# -------------------------------------LECTURE 164 REINDEXING SERIES AND DATAFRAME-------------------------------
+from pandas import DataFrame
+data = {"Age":[18,15,17],"Name":['Mit','Adi','Sanskar'],"Salary":[2500000,2500000,2500000]}
+df = DataFrame(data)
+df
+
+
+df = df.reindex([1,2,0]) #reindexing dataframe by index
+df
+
+
+fields = ['Name','Age','Salary']
+df = df.reindex(columns=fields) #reindexing dataframe by column name
+df
+
+
+#Reindexing series
+from pandas import Series
+se = Series([100,200,300,400,500],index = ['a','c','d','e','b'])
+se
+
+
+se = se.reindex(['a','b','c','d','e']) #note:: Reindexing changes the position of index and not the values stored in them
+se
+
+# -------------------------------------LECTURE 165 DELETING ROWS & COLUMNS-------------------------------
+from pandas import DataFrame
+data = {"Name":['Mit','Adi','Sanskar'],"Age":[18,15,17],"Salary":[2500000,2500000,2500000]}
+df = DataFrame(data)
+df
+​
+
+#deleting rows by using drop fn .,we can also delete multiple rows by giving comma and row index
+df1 = df.drop([2])
+df1
+
+
+#deleting columns by using drop fn .,we can also delete multiple columns by giving comma and col name.
+#NOTE :: axis =1 is given for y-axis bcoz we want to delete y-axis
+df2 = df.drop('Salary',axis = 1)
+df2
+
+
+
+#-------------LECTURE 166 - ARITHMETIC OPERATIONS ON DATAFRAME & SERIES----------------------------
+#Series WITH SAME no. of indexes (Addition)
+from pandas import Series
+se = Series([1,2,3,4,5])
+se1 = Series([10,20,30,40,50])
+se + se1
+
+
+
+#Series WITH DIFFERENT no. of indexes (Addition)
+from pandas import Series
+se2 = Series([1,2,3,4,5])
+se3 = Series([10,20,30,40,50,60,70])
+se2 + se3
+#NaN means not a number
+
+
+#same for DATAFRAME
+
+
+#------------LECTURE 167 - ARITHMETIC OPERATIONS BETWEEN DATAFRAME & SERIES----------------------------
+from pandas import DataFrame
+from pandas import Series
+#sub df from series having same index
+d1 = {'Speed': [80,70,90],'Temperature':[35,15,45],'Humidity':[54,4,5]}
+df1 = DataFrame(d1)
+se1  = Series([100,200,300],index = ['Speed','Temperature','Humidity'])
+df1 -se1
+
+
+
+from pandas import DataFrame
+from pandas import Series
+#sub df from series having different index
+d2 = {'Speed': [80,70,90],'Temperature':[35,15,45],'Humidity':[54,4,5]}
+df2 = DataFrame(d2)
+se2  = Series([100,200],index = ['Speed','Temperature',])
+df2-se2
+
+
+
+#------------LECTURE 169 SORTING SERIES AND DATAFRAMES acc to values----------------------------
+from pandas import Series
+se1  = Series([800,500,700],index = ['Speed','Temperature','Humidity'])
+se1
+#NOTE :: IT WILL SORT VALUES IN ASCENDING ORDER
+
+se1.sort_values()
+
+
+from pandas import DataFrame
+d2 = {'Speed': [80,70,90],'Temperature':[35,15,45],'Humidity':[54,89,74]}
+df2 = DataFrame(d2)
+df2
+
+df2.sort_values(by= 'Humidity')#here,you'll need to give parameter by which you want to sort
+
+
+
+
+
+
+#------------LECTURE 170 IDENTIFYING UNIQUE INDEX VALUES ARE PRESENT OR NOT----------------------------
+from pandas import Series
+se1  = Series([800,500,700,500,400,700,500,700,800,400,600,400],index = [1,4,1,2,4,3,4,2,1,5,8,10])
+se1
+
+
+se1.is_unique #to identify it ther is (is_unique) fn if it return false then values aren't unique and 
+#if true then values are unique
+
+
+
+
+#--------------------LECTURE 171 PERFORMING ADD, MAX & MIN OPERATIONS----------
+from pandas import DataFrame
+d2 = {'Speed': [80,70,90],'Temperature':[35,15,45],'Humidity':[54,4,5]}
+df2 = DataFrame(d2)
+df2
+
+
+df2.sum() #it will give sum for all columns , if you want sum for rows pass df2.sum(axis = 1)
+
+
+df2.idxmax() #idxmax gives the index of max value in column
+
+
+df2.idxmin()#idxmin gives the index of min value in column
+
+
+
+
+#------------LECTURE 172 droping or filtering out NaN values----------------------------
+
+/////////////////For DataFrame/////////////////////////////
+
+--------------------LECTURE 172 droping or filtering out NaN values----------
+import numpy as np #for this, we will use one module called numpy
+from pandas import DataFrame
+d2 = {'Speed': [80,np.nan,90],'Temperature':[np.nan,15,45],'Humidity':[54,4,5]} #np.nan means nan values
+df2 = DataFrame(d2)
+df2
+
+
+df2.dropna() #in this it dropped the row which had nan values 
+#butif you print ths df again it will not be saved. if you want to sAVE type this : df2 = df2.dropna()
+
+
+
+#replacing nan values by a number
+df2= df2.fillna(0)
+df2
+
+
+
+/////////////////For Series/////////////////////////////
+import numpy as np
+from pandas import Series
+se1  = Series([800,np.nan,700,500,np.nan,700])
+se1
+
+se1.dropna()
+
+se1.fillna(0)
+
+
+#-------------------------------LECTURE 173 - loading data from a file (.csv,.json,.xlxs)
+import pandas
+df = pandas.read_csv("addresses.csv")
+df
+
+
+import pandas
+df1 = pandas.read_excel("file.xlsx")
+df1
+
+
+import pandas
+df2 = pandas.read_json("file.json")
+df2
+
+
+
+#-------------------------------LECTURE 174  analyzing file data 
+import pandas
+df1 = pandas.read_excel("file.xlsx")
+df1
+
+
+#1) by using drop
+from pandas import DataFrame
+df1.drop('Age',axis =1)
+df1
+
+
+from pandas import DataFrame
+#deleting unwanted column by two ways
+#2)by not specifying column index that you dont need
+df1 = DataFrame(df1,columns = ['First Name','Last Name','Gender','Country'])
+df1
+
+
+from pandas import DataFrame
+df1 = DataFrame(df1,columns = ['First Name','Last Name','Gender','Country','Age'])
+df1
+
+
+#sum of numeric values
+df1.sum(numeric_only =True)
+
+#--------------LECTURE 175 -CREATING NUMPY ARRAY
+import numpy as n
+array = n.array([1,2,3,4,5,6])#SINGLE DIMENSIONAL
+array
+
+
+#CREATING MULTI - DIMENSIONAL OR RESHAPING
+array.reshape(3,2)
+
+
+
+#--------------------LECTURE 176 - ANOTHER WAYS TO CREATE AN ARRAY
+import numpy as np
+#1) USING arange method ,..In this, we need to pass a range till which you want the numbers
+arr = np.arange(24)
+print(arr)
+
+#reshaping in multi-dimensional
+arr.reshape(3,8)
+
+
+#2) creating null array(an array consisting of zeros)
+array = np.zeros(5)
+print(array)#this will give float output if we want in int then write [array = np.zeros(5,dtype=int)]
+
+
+
+
+#--------------------LECTURE 177- CREATING ARRAYS USING LOGSPACE & LINSPACE
+import numpy as np
+#1)linspace
+arr = np.linspace(10,20,5) #it will print from range 10 to 20 in 5 equal parts. if you want it without decimal 
+#write [arr = np.linspace(10,20,5,endpoint = False)] it will print 5 even equal parts of 10 to 20
+print(arr)
+
+
+
+#2)Logspace
+arr1 = np.logspace(1.0,2.0,5)#it will print from range 10 to 20 in 5 equal logarithmic parts.if you want it with some base 
+#write [arr1 = np.logspace(10,20,5,base = 2)] it will print 5 log parts with base 2 of 1.0 to 2.0
+print(arr1)
+
+
